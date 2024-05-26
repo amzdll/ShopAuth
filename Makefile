@@ -11,8 +11,8 @@ install-deps:
     GOBIN=$(LOCAL_BIN) go install -mod=mod google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 
 generate-api:
-	generate-auth-api
-	generate-access-api
+	@make generate-auth-api
+	@make generate-access-api
 
 generate-access-api:
 	sh scripts/generate_proto.sh access_v1
